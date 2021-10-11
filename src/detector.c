@@ -340,7 +340,7 @@ void train_detector(char *datacfg, char *cfgfile, char *weightfile, int *gpus, i
                 best_map = mean_average_precision;
                 printf("New best mAP!\n");
                 char buff[256];
-                sprintf(buff, "%s/%s_best.weights", backup_directory, base);
+                sprintf(buff, "%s/%s_best_%2.2f_mAP.weights", backup_directory, base, best_map*100);
                 save_weights(net, buff);
             }
 
