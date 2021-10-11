@@ -155,7 +155,7 @@ void train_go(char *cfgfile, char *weightfile)
             sprintf(buff, "%s/%s.backup",backup_directory,base);
             save_weights(net, buff);
         }
-        if(get_current_batch(net)%10000 == 0){
+        if(get_current_batch(net)%1000 == 0){
             char buff[256];
             sprintf(buff, "%s/%s_%d.backup",backup_directory,base,get_current_batch(net));
             save_weights(net, buff);
